@@ -1,0 +1,31 @@
+<div ng-controller ="ctrl1">
+			<input ng-model='searchName' />
+
+			<button ng-click='getActors()'  >
+				Search...
+			</button>
+			<button ng-click="back()">
+				back
+			</button>
+			<hr>
+			<br>
+			<div ng-show="!show">
+				<div ng-repeat="r in results" class="all1" ng-click="getMoviesById(r.id)" >
+					ID:{{r.id}}
+					<br>
+					Name:{{r.name}}
+					<br>
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{r.profile_path}}" />
+					<hr>
+				</div>
+			</div>
+			<div ng-show="show"  >
+				<div ng-repeat='c in cast' class="all1">
+					<div>
+						{{c.original_title}}
+					</div>
+					<br>
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{c.poster_path}}">
+				</div>
+			</div>
+		</div>
